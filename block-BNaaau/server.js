@@ -23,53 +23,40 @@ function serverOne(req,res){
   console.log('This is response object');
   console.log(res);
 }
-
 server2=http.createServer(serverTwo);
 server2.listen(5100,()=>{console.log("Port:5100");})
 function serverTwo(req,res){
     res.end('My First server in NodeJS');
 }
-
-
 server3=http.createServer(serverThree)
 server3.listen(5555,()=>{console.log("Port:5555");})
 function serverThree(req,res){
     console.log(req.headers);
     console.log(req.headers['user-agent']);
 }
-
-
 server4=http.createServer(serverFour)
 server4.listen(5566,()=>{console.log("Port:5566");})
 function serverFour(req,res){
   console.log(req.url, req.method);
   res.end(req.url, req.method);
 }
-
-
 server5=http.createServer(serverFive)
 server5.listen(7000,()=>{console.log("Port:7000");})
 function serverFive(req,res){
     res.end(req.headers);
 }
-
-
 server6=http.createServer(serverSix)
 server6.listen(3333,()=>{console.log("Port:3333");})
 function serverSix(req,res){
     res.statusCode = 202;
     res.end();
 }
-
-
 server7=http.createServer(serverSeven)
 server7.listen(8000,()=>{console.log("Port:8000");})
 function serverSeven(req,res){
     res.setHeader('Content-type', 'text/html');
     res.end(`<h3>Welcome to Altcampus</h3>`);
 }
-
-
 server8=http.createServer(serverEight)
 server8.listen(8888,()=>{console.log("Port:8888");})
 function serverEight(req,res){
@@ -78,8 +65,6 @@ function serverEight(req,res){
       });
       res.end(`{ success: true, message: 'Welcome to Nodejs' }`);
 }
-
-
 server9=http.createServer(serverNine)
 server9.listen(5050,()=>{console.log("Port:5050");})
 function serverNine(req,res){
