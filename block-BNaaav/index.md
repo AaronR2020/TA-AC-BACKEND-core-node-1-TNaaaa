@@ -9,6 +9,7 @@ Application
 - index.html
 - about.html
 - ...other html templates
+
 - assets(directory)
   - stylesheets(directory)
     - style.css
