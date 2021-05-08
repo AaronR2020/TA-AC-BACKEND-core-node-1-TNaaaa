@@ -85,31 +85,30 @@ function handleRequest(req,res){
 }
 
 
-
-
-  //Q. Repeat above question using `res.writeHead` to set status code and Content-Type at the same time.
-
-
-
-
-
-
   /*Q. create a basic node server
   - add a listener at port 8888
   - add appropriate header for json response
   - send json response({success: true, message: 'Welcome to Nodejs'}) */
 
+server8=http.createServer(request8)
+server8.listen(8888,()=>{console.log("PORT:8888")})
+function request8(req,res){
+    a={"success":true,"message": 'Welcome to Nodejs'}
+res.end(a)//error
+}
 
-
-
-
-
-  /*Q. create a server
+/*Q. create a server
   - add listener on port 5050
   - use postman to do a POST request on index route
   - console to check request method
   - send HTML response i.e. `<h2>posted for first time</h2>` */
-
+  server9=http.createServer(request9)
+  server9.listen(5050,()=>{console.log("PORT:5050")})
+  function request8(req,res){
+      if(res.method=='POST')
+      res.setHeader('Content-Type','text/html');
+      res.end(`<h2>posted for first time</h2>`)
+  }
 
 
 
@@ -120,7 +119,18 @@ function handleRequest(req,res){
   - handle GET request on '/' route where return your name in plain text in response
   - handle GET request on '/about' route and return your name in h2 as HTML page.
   - add a error handler at last to handle request made on other than above routes with a status code of 404.*/
-  
+  server10=http.createServer(request9)
+  server10.listen(2345,()=>{console.log("PORT:2345")})
+  function request8(req,res){
+    pathname=url.parse(req.url).pathname
+      if(res.method=='GET'&& pathname=='./'){
+        res.setHeader('Content-Type','text/plain');
+        res.end(`<h2>posted for first time</h2>`)
+    }
+      else if(res.method=='GET'&& pathname=='./about')
+      res.setHeader('Content-Type','text/html');
+      res.end(`<h2>404</h2>`)
+  }
 
 
 
